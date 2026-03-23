@@ -33,6 +33,16 @@ This project demonstrates a comprehensive data warehousing and analytics solutio
 
 ---
 
+## 💡 Specifications
+
+- **Data Sources**: Import data from two source systems (ERP and CRM) provided as CSV files.
+- **Data Quality**: Cleanse and resolve data quality isssues prior to analysis.
+- **Integration**: Cobine both sources into a single, user-friendly data model designed for analytical queries.
+- **Scope**: Focus on the latest dataset only, historization of data is no required.
+- **Documentation**: Provide clear documentation of the data model to support both business stakeholders and analytics teams.
+
+---
+
 ## 💡 Business Impact
 
 This project simulates a real-world data engineering scenario where data from multiple source systems (CRM and ERP) is integrated into a centralized data warehouse.
@@ -196,6 +206,11 @@ Example of analytical query output from the Gold layer:
 
 ---
 
+## 🚀 License
+This project is licensed under the (MIT License)(LICENSE). You are free to use, modify, and share this project with proper attribution.
+
+---
+
 ## 🧾 Naming Conventions
 
 Full documentation:
@@ -241,5 +256,5 @@ Using the data warehouse, the following insights can be derived:
 
 These insights demonstrate how raw data can be transformed into actionable business knowledge.
 
-## 👨‍💻 Author
-Jan Hernandez, System Engineer
+## 👨‍💻 About us
+Hi there! I'm Jan Hernandez.
