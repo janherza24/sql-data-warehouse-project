@@ -162,7 +162,7 @@ The Gold layer enables business-level analysis:
 
 Example:
 
-COnsulta SQL
+Cnsulta SQL
 
 ---
 
@@ -171,6 +171,8 @@ COnsulta SQL
 Example of analytical query output from the Gold layer:
 
 ![Query Results](docs/query_results.png)
+
+---
 
 ## 🧾 Naming Conventions
 
