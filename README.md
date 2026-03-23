@@ -25,6 +25,8 @@ The data warehouse follows a multi-layered architecture:
 
 Source Systems (CRM, ERP) → Bronze → Silver → Gold → Analytics
 
+---
+
 ### Architecture & Design Diagrams
 All architectural components are documented in the `/docs` folder:
 
