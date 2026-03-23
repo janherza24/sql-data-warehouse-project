@@ -198,16 +198,16 @@ Full documentation:
 `tests/quality_checks_gold.sql`
 
 ## 🛠️ Tech Stack
-SQL (core transformations)
-Relational Database (Microsoft SQL Server)
-CSV files (data sources)
-Dimensional Modeling (Kimball methodology)
+- SQL (core transformations)
+- Relational Database (Microsoft SQL Server)
+- CSV files (data sources)
+- Dimensional Modeling (Kimball methodology)
 
 ## 💡 Future Improvements
-Implement incremental loading strategy
-Add orchestration (Airflow)
-Automate data quality checks
-Integrate BI tools (Power BI / Tableau)
+- Implement incremental loading strategy
+- Add orchestration (Airflow)
+- Automate data quality checks
+- Integrate BI tools (Power BI / Tableau)
 
 ## 📈 Key Insights (Example)
 
