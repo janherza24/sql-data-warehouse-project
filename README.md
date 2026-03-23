@@ -11,17 +11,25 @@ This project demonstrates a comprehensive data warehousing and analytics solutio
 
 ---
 
-## **Table of Contents**
+## 📑 Table of Contents
 
-1. [Business Impact](#Business-Impact)
-2. [Business Impact](#Business-Impact)
-   - [Bronze Rules](#bronze-rules)
-   - [Silver Rules](#silver-rules)
-   - [Gold Rules](#gold-rules)
-3. [Column Naming Conventions](#column-naming-conventions)
-   - [Surrogate Keys](#surrogate-keys)
-   - [Technical Columns](#technical-columns)
-4. [Stored Procedure](#stored-procedure-naming-conventions)
+- [🚀 Overview](#-overview)
+- [💡 Business Impact](#-business-impact)
+- [🎯 Business Objective](#-business-objective)
+- [🏗️ Architecture](#-architecture)
+- [🏗️ Architecture & Design Diagrams](#-architecture--design-diagrams)
+- [🗄️ Data Modeling](#-data-modeling)
+- [⚙️ ETL / ELT Process](#-etl--elt-process)
+- [📁 Project Structure](#-project-structure)
+- [✅ Data Quality](#-data-quality)
+- [📊 Analytics & KPIs](#-analytics--kpis)
+- [📸 Sample Results](#-sample-results)
+- [📈 Key Insights (Example)](#-key-insights-example)
+- [🧾 Naming Conventions](#-naming-conventions)
+- [▶️ How to Run](#-how-to-run)
+- [🛠️ Tech Stack](#-tech-stack)
+- [💡 Future Improvements](#-future-improvements)
+- [👨‍💻 Author](#-author)
 
 ---
 
