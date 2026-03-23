@@ -6,12 +6,12 @@
 ![Architecture](https://img.shields.io/badge/Architecture-Bronze%2FSilver%2FGold-orange)
 ![Status](https://img.shields.io/badge/Status-Completed-success)
 
-## Overview
+## 🚀 Overview
 This project demonstrates a comprehensive data warehousing and analytics solution, from building a data warehouse to generating actionable insights. Designed as a portfolio project, it highlights industry best practices in data engineering and analytics.
 
 ---
 
-## Business Impact
+## 💡 Business Impact
 
 This project simulates a real-world data engineering scenario where data from multiple source systems (CRM and ERP) is integrated into a centralized data warehouse.
 
@@ -26,7 +26,7 @@ This approach reflects how modern data platforms support business intelligence a
 
 ---
 
-## Business Objective
+## 🎯 Business Objective
 The goal of this project is to provide a structured data platform to answer key business questions such as:
 
 - Who are the most valuable customers?
@@ -36,19 +36,19 @@ The goal of this project is to provide a structured data platform to answer key 
 
 ---
 
-## Architecture
+## 🏗️ Architecture
 
 The data warehouse follows a multi-layered architecture:
 
-- **Bronze Layer** → Raw data ingestion from source systems (CRM, ERP)  
-- **Silver Layer** → Data cleansing, standardization, and integration  
-- **Gold Layer** → Business-ready data modeled as fact and dimension tables
+- 🥉 **Bronze Layer** → Raw data ingestion from source systems (CRM, ERP)  
+- 🥈 **Silver Layer** → Data cleansing, standardization, and integration  
+- 🥇 **Gold Layer** → Business-ready data modeled as fact and dimension tables
 
-```Source Systems (CRM, ERP) → Bronze → Silver → Gold → Analytics```
+`Source Systems (CRM, ERP) → Bronze → Silver → Gold → Analytics`
 
 ---
 
-### Architecture & Design Diagrams
+### 🏗️ Architecture & Design Diagrams
 All architectural components are documented in the `/docs` folder:
 
 - `data_architecture.png` → Overall architecture  
@@ -58,7 +58,7 @@ All architectural components are documented in the `/docs` folder:
 
 ---
 
-## Data Modeling
+## 🗄️ Data Modeling
 
 The Gold layer is designed using a **Star Schema**:
 
@@ -77,7 +77,7 @@ The Gold layer is designed using a **Star Schema**:
 
 ---
 
-## ETL / ELT Process
+## ⚙️ ETL / ELT Process
 
 The pipeline is implemented using SQL scripts and stored procedures:
 
@@ -96,49 +96,49 @@ The pipeline is implemented using SQL scripts and stored procedures:
 
 ---
 
-## Project Structure
+## 📁 Project Structure
 
 ```
 📁 sql-data-warehouse-project/
 │
-├── README.md
+├── 📘 README.md
 ├── 📁 docs/
-│ ├── data_architecture.png
-│ ├── data_catalog.md
-│ ├── data_flow.png
-│ ├── data_integration.png
-│ ├── data_model.png
-│ └── naming_conventions.md
+│ ├── 🖼️ data_architecture.png
+│ ├── 📘 data_catalog.md
+│ ├── 🖼️ data_flow.png
+│ ├── 🖼️ data_integration.png
+│ ├── 🖼️ data_model.png
+│ └── 📘 naming_conventions.md
 │
 ├── 📁 datasets/
 │ ├── 📁 source_crm/
-│ │ ├── cust_info.csv
-│ │ ├── prd_info.csv
-│ │ └── sales_details.csv
+│ │ ├── 📄 cust_info.csv
+│ │ ├── 📄 prd_info.csv
+│ │ └── 📄 sales_details.csv
 │ └── 📁 source_erp/
-│ │ ├── CUST_AZ12.csv
-│ │ ├── LOC_A101.csv
-│ │ └── PX_CAT_G1V2.csv
+│ │ ├── 📄 CUST_AZ12.csv
+│ │ ├── 📄 LOC_A101.csv
+│ │ └── 📄 PX_CAT_G1V2.csv
 │
 ├── 📁 scripts/
 │ ├── 📁 bronze/
-│ │ ├── ddl.bronze.sql
-│ │ └── proc_load_bronze.sql
+│ │ ├── 🛢️ ddl.bronze.sql
+│ │ └── 🛢️ proc_load_bronze.sql
 │ ├── 📁 gold/
-│ │ └── ddl_gold.sql
+│ │ └── 🛢️ ddl_gold.sql
 │ ├── 📁 silver/
-│ │ ├── ddl.silver.sql
-│ │ └── proc_load_silver.sql
-│ └── init_database.sql
+│ │ ├── 🛢️ ddl.silver.sql
+│ │ └── 🛢️ proc_load_silver.sql
+│ └── 🛢️ init_database.sql
 │
 ├── 📁 tests/
-│ ├── quality_checks_gold.sql
-│ └── quality_checks_silver.sql
+│ ├── 🛢️ quality_checks_gold.sql
+│ └── 🛢️ quality_checks_silver.sql
 ```
 
 ---
 
-## Data Quality
+## ✅ Data Quality
 
 Data quality checks are implemented using SQL scripts:
 
@@ -151,7 +151,7 @@ Scripts available in: `tests/`
 
 ---
 
-## Analytics & KPIs
+## 📊 Analytics & KPIs
 
 The Gold layer enables business-level analysis:
 
@@ -166,19 +166,19 @@ COnsulta SQL
 
 ---
 
-## Sample Results
+## 📸 Sample Results
 
 Example of analytical query output from the Gold layer:
 
 ![Query Results](docs/query_results.png)
 
-## Naming Conventions
+## 🧾 Naming Conventions
 
 Full documentation:
 
-docs/naming_conventions.md
+`docs/naming_conventions.md`
 
-## How to Run
+## ▶️ How to Run
 1. Initialize the database:
 `scripts/init_database.sql`
 
@@ -195,19 +195,19 @@ docs/naming_conventions.md
 `tests/quality_checks_silver.sql`
 `tests/quality_checks_gold.sql`
 
-## Tech Stack
+## 🛠️ Tech Stack
 SQL (core transformations)
 Relational Database (Microsoft SQL Server)
 CSV files (data sources)
 Dimensional Modeling (Kimball methodology)
 
-## Future Improvements
+## 💡 Future Improvements
 Implement incremental loading strategy
 Add orchestration (Airflow)
 Automate data quality checks
 Integrate BI tools (Power BI / Tableau)
 
-## Key Insights (Example)
+## 📈 Key Insights (Example)
 
 Using the data warehouse, the following insights can be derived:
 
@@ -217,5 +217,5 @@ Using the data warehouse, the following insights can be derived:
 
 These insights demonstrate how raw data can be transformed into actionable business knowledge.
 
-## Author
+## 👨‍💻 Author
 Jan Hernandez, System Engineer
