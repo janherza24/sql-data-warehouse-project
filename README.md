@@ -1,5 +1,11 @@
 # SQL Data Warehouse Project
 
+![SQL Server](https://img.shields.io/badge/SQL%20Server-CC2927?style=for-the-badge&logo=microsoft-sql-server&logoColor=white)
+![ETL](https://img.shields.io/badge/ETL-Pipeline-green?style=for-the-badge)
+![Architecture](https://img.shields.io/badge/Architecture-Bronze%2FSilver%2FGold-orange?style=for-the-badge)
+![Methodology](https://img.shields.io/badge/Methodology-Kimball-blue?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Completed-success?style=for-the-badge)
+
 ## Overview
 This project demonstrates a comprehensive data warehousing and analytics solution, from building a data warehouse to generating actionable insights. Designed as a portfolio project, it highlights industry best practices in data engineering and analytics.
 
