@@ -11,6 +11,20 @@ This project demonstrates a comprehensive data warehousing and analytics solutio
 
 ---
 
+## **Table of Contents**
+
+1. [Overview](#Overview)
+2. [Business Impact](#Business-Impact)
+   - [Bronze Rules](#bronze-rules)
+   - [Silver Rules](#silver-rules)
+   - [Gold Rules](#gold-rules)
+3. [Column Naming Conventions](#column-naming-conventions)
+   - [Surrogate Keys](#surrogate-keys)
+   - [Technical Columns](#technical-columns)
+4. [Stored Procedure](#stored-procedure-naming-conventions)
+
+---
+
 ## 💡 Business Impact
 
 This project simulates a real-world data engineering scenario where data from multiple source systems (CRM and ERP) is integrated into a centralized data warehouse.
