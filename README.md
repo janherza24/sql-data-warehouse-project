@@ -13,7 +13,7 @@ This project demonstrates a comprehensive data warehousing and analytics solutio
 
 ## **Table of Contents**
 
-1. [Overview](#🚀-Overview)
+1. [Business Impact](#Business-Impact)
 2. [Business Impact](#Business-Impact)
    - [Bronze Rules](#bronze-rules)
    - [Silver Rules](#silver-rules)
