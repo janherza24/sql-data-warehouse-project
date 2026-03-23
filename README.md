@@ -81,16 +81,16 @@ The Gold layer is designed using a **Star Schema**:
 
 The pipeline is implemented using SQL scripts and stored procedures:
 
-### 1. Bronze Layer
+### 1. Bronze Layer 🥉
 - Raw ingestion from CSV files
 - No transformations applied
 
-### 2. Silver Layer
+### 2. Silver Layer 🥈
 - Data cleansing and standardization  
 - Data integration between CRM and ERP  
 - Data type normalization  
 
-### 3. Gold Layer
+### 3. Gold Layer 🥇
 - Dimensional modeling  
 - Fact and dimension table creation  
 
