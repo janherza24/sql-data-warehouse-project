@@ -48,7 +48,7 @@ The data warehouse follows a multi-layered architecture:
 
 ---
 
-### 🏗️ Architecture & Design Diagrams
+## 🏗️ Architecture & Design Diagrams
 All architectural components are documented in the `/docs` folder:
 
 - `data_architecture.png` → Overall architecture  
