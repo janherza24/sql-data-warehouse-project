@@ -77,7 +77,7 @@ The pipeline is implemented using SQL scripts and stored procedures:
 
 ## 📂 Project Structure
 
-``
+```
 sql-data-warehouse-project/
 │
 ├── README.md
@@ -113,7 +113,7 @@ sql-data-warehouse-project/
 ├── tests/
 │ ├── quality_checks_gold.sql
 │ └──quality_checks_silver.sql
-``
+```
 
 ---
 
