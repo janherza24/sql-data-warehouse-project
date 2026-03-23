@@ -1,7 +1,7 @@
-# SQL data warehouse project
+# SQL Data Warehouse Project
 
 ## Overview
-This project demonstrates a comprehensive data warehousing and analytics solution, from building a data warehouse to generating actionable insights. Designed as a portfolio project highlights industry best practices in data engineering and analytics.
+This project demonstrates a comprehensive data warehousing and analytics solution, from building a data warehouse to generating actionable insights. Designed as a portfolio project, it highlights industry best practices in data engineering and analytics.
 
 ---
 
@@ -23,7 +23,7 @@ The data warehouse follows a multi-layered architecture:
 - **Silver Layer** → Data cleansing, standardization, and integration  
 - **Gold Layer** → Business-ready data modeled as fact and dimension tables
 
-Source Systems (CRM, ERP) → Bronze → Silver → Gold → Analytics
+```Source Systems (CRM, ERP) → Bronze → Silver → Gold → Analytics```
 
 ---
 
@@ -112,7 +112,7 @@ sql-data-warehouse-project/
 │
 ├── tests/
 │ ├── quality_checks_gold.sql
-│ └──quality_checks_silver.sql
+│ └── quality_checks_silver.sql
 ```
 
 ---
@@ -126,7 +126,7 @@ Data quality checks are implemented using SQL scripts:
 - Referential integrity checks  
 - Validation between Silver and Gold layers  
 
-Scripts available in: tests/
+Scripts available in: `tests/`
 
 ---
 
