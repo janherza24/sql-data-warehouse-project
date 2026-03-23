@@ -99,10 +99,10 @@ The pipeline is implemented using SQL scripts and stored procedures:
 ## Project Structure
 
 ```
-sql-data-warehouse-project/
+📁 sql-data-warehouse-project/
 │
 ├── README.md
-├── docs/
+├── 📁 docs/
 │ ├── data_architecture.png
 │ ├── data_catalog.md
 │ ├── data_flow.png
@@ -110,28 +110,28 @@ sql-data-warehouse-project/
 │ ├── data_model.png
 │ └── naming_conventions.md
 │
-├── datasets/
-│ ├── source_crm/
+├── 📁 datasets/
+│ ├── 📁 source_crm/
 │ │ ├── cust_info.csv
 │ │ ├── prd_info.csv
 │ │ └── sales_details.csv
-│ └── source_erp/
+│ └── 📁 source_erp/
 │ │ ├── CUST_AZ12.csv
 │ │ ├── LOC_A101.csv
 │ │ └── PX_CAT_G1V2.csv
 │
-├── scripts/
-│ ├── bronze/
+├── 📁 scripts/
+│ ├── 📁 bronze/
 │ │ ├── ddl.bronze.sql
 │ │ └── proc_load_bronze.sql
-│ ├── gold/
+│ ├── 📁 gold/
 │ │ └── ddl_gold.sql
-│ ├── silver/
+│ ├── 📁 silver/
 │ │ ├── ddl.silver.sql
 │ │ └── proc_load_silver.sql
 │ └── init_database.sql
 │
-├── tests/
+├── 📁 tests/
 │ ├── quality_checks_gold.sql
 │ └── quality_checks_silver.sql
 ```
