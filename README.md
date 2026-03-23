@@ -11,6 +11,21 @@ This project demonstrates a comprehensive data warehousing and analytics solutio
 
 ---
 
+## Business Impact
+
+This project simulates a real-world data engineering scenario where data from multiple source systems (CRM and ERP) is integrated into a centralized data warehouse.
+
+By implementing this solution, the following business value is enabled:
+
+- Improved decision-making through centralized and reliable data  
+- Faster analytical queries using a dimensional model (Star Schema)  
+- Clear visibility into sales performance and customer behavior  
+- Scalable architecture for future data growth and integration  
+
+This approach reflects how modern data platforms support business intelligence and analytics in production environments.
+
+---
+
 ## Business Objective
 The goal of this project is to provide a structured data platform to answer key business questions such as:
 
@@ -81,7 +96,7 @@ The pipeline is implemented using SQL scripts and stored procedures:
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```
 sql-data-warehouse-project/
@@ -149,6 +164,14 @@ Example:
 
 COnsulta SQL
 
+---
+
+## Sample Results
+
+Example of analytical query output from the Gold layer:
+
+![Query Results](docs/query_results.png)
+
 ## Naming Conventions
 
 Full documentation:
@@ -183,6 +206,16 @@ Implement incremental loading strategy
 Add orchestration (Airflow)
 Automate data quality checks
 Integrate BI tools (Power BI / Tableau)
+
+## Key Insights (Example)
+
+Using the data warehouse, the following insights can be derived:
+
+- Top 10 customers contribute to a significant percentage of total revenue  
+- Certain product categories dominate overall sales performance  
+- Sales show consistent trends based on time (seasonality potential)  
+
+These insights demonstrate how raw data can be transformed into actionable business knowledge.
 
 ## Author
 Jan Hernandez, System Engineer
