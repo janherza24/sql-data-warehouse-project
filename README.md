@@ -36,10 +36,10 @@ This project demonstrates a comprehensive data warehousing and analytics solutio
 ## 💡 Specifications
 
 - **Data Sources**: Import data from two source systems (ERP and CRM) provided as CSV files.
-- **Data Quality**: Cleanse and resolve data quality isssues prior to analysis.
-- **Integration**: Cobine both sources into a single, user-friendly data model designed for analytical queries.
-- **Scope**: Focus on the latest dataset only, historization of data is no required.
-- **Documentation**: Provide clear documentation of the data model to support both business stakeholders and analytics teams.
+- **Data Quality**: Cleanse and resolve data quality issues prior to analysis.
+- **Integration**: Combine both sources into a unified analytical data model.
+- **Scope**: Focus on the latest dataset only (no historization).
+- **Documentation**: Provide clear documentation for both technical and business users.
 
 ---
 
@@ -49,16 +49,15 @@ This project simulates a real-world data engineering scenario where data from mu
 
 By implementing this solution, the following business value is enabled:
 
-- Improved decision-making through centralized and reliable data  
-- Faster analytical queries using a dimensional model (Star Schema)  
-- Clear visibility into sales performance and customer behavior  
-- Scalable architecture for future data growth and integration  
-
-This approach reflects how modern data platforms support business intelligence and analytics in production environments.
+- Improved decision-making through centralized and reliable data.
+- Faster analytical queries using a dimensional model (Star Schema).
+- Clear visibility into sales performance and customer behavior. 
+- Scalable architecture for future data growth and integration.
 
 ---
 
 ## 🎯 Business Objective
+
 The goal of this project is to provide a structured data platform to answer key business questions such as:
 
 - Who are the most valuable customers?
@@ -72,59 +71,77 @@ The goal of this project is to provide a structured data platform to answer key 
 
 The data warehouse follows a multi-layered architecture:
 
-- 🥉 **Bronze Layer** → Raw data ingestion from source systems (CRM, ERP)  
-- 🥈 **Silver Layer** → Data cleansing, standardization, and integration  
-- 🥇 **Gold Layer** → Business-ready data modeled as fact and dimension tables
+- 🥉 **Bronze Layer** → Raw data ingestion from CSV files into SQL Server tables  
+- 🥈 **Silver Layer** → Data cleansing, normalization, and integration  
+- 🥇 **Gold Layer** → Business-ready data exposed through **views** (fact and dimension model)
 
-`Source Systems (CRM, ERP) → Bronze → Silver → Gold → Analytics`
+`Source Systems (CSV) → Bronze → Silver → Gold (Views) → Analytics`
 
 ---
 
 ## 🏗️ Architecture & Design Diagrams
+
 All architectural components are documented in the `/docs` folder:
 
 - `data_architecture.png` → Overall architecture  
 - `data_flow.png` → Data movement across layers  
 - `data_integration.png` → Source integration logic  
-- `data_model.png` → Dimensional model (Star Schema)  
+- `data_model.png` → Dimensional model (Star Schema) 
 
 ---
 
 ## 🗄️ Data Modeling
 
-The Gold layer is designed using a **Star Schema**:
+The Gold layer is designed using a **Star Schema**, implemented through SQL views:
 
-### Fact Tables
+### Fact View
 - `fact_sales` → Transactional sales data
 
-### Dimension Tables
+### Dimension Views
 - `dim_customers` → Customer attributes  
 - `dim_products` → Product attributes  
 
 ### Design Principles
-- Surrogate keys (`*_key`) for all dimensions  
-- Foreign keys in fact tables referencing dimensions  
-- Clear separation between facts and dimensions  
-- Business-aligned naming conventions  
+
+- Surrogate keys (`*_key`) generated using window functions.
+- Foreign key relationships handled logically in views.
+- Clear separation between facts and dimensions.
+- Business-aligned naming conventions.
+- Gold layer implemented using **views instead of physical tables**.
 
 ---
 
 ## ⚙️ ETL / ELT Process
 
-The pipeline is implemented using SQL scripts and stored procedures:
+The pipeline follows an **ELT approach**, where transformations are performed inside the database.
 
 ### 1. Bronze Layer 🥉
-- Raw ingestion from CSV files
-- No transformations applied
+- Full reload strategy using `TRUNCATE + BULK INSERT`.
+- Raw ingestion from CSV files.
+- No transformations applied.
 
 ### 2. Silver Layer 🥈
-- Data cleansing and standardization  
-- Data integration between CRM and ERP  
-- Data type normalization  
+- Data cleansing and standardization.
+- Deduplication using window functions.
+- Data normalization (dates, strings, categorical values).
+- Business rule enforcement (e.g., recalculating sales, fixing invalid values).
+- Integration between CRM and ERP sources.
 
 ### 3. Gold Layer 🥇
-- Dimensional modeling  
-- Fact and dimension table creation  
+- Business-ready views creation (Star Schema).
+- Data enrichment from multiple sources.
+- Logical modeling using fact and dimension views.
+- No data duplication (query-time transformation).
+
+---
+
+## 🧠 Data Engineering Decisions
+
+- Full reload strategy implemented in Bronze and Silver layers  
+- ELT approach: transformations handled inside SQL Server  
+- Data quality issues resolved during Silver transformations  
+- Gold layer implemented as views to improve maintainability and avoid duplication  
+- Window functions used for deduplication and surrogate key generation  
 
 ---
 
@@ -174,10 +191,10 @@ The pipeline is implemented using SQL scripts and stored procedures:
 
 Data quality checks are implemented using SQL scripts:
 
-- Null value validation  
-- Duplicate detection  
-- Referential integrity checks  
-- Validation between Silver and Gold layers  
+- Null value validation.
+- Duplicate detection.
+- Referential integrity checks.
+- Validation between Silver and Gold layers.
 
 Scripts available in: `tests/`
 
@@ -187,14 +204,10 @@ Scripts available in: `tests/`
 
 The Gold layer enables business-level analysis:
 
-- Total Revenue  
-- Sales by Customer  
-- Product Performance  
-- Sales Trends Over Time  
-
-Example:
-
-Cnsulta SQL
+- Total Revenue.
+- Sales by Customer.
+- Product Performance.
+- Sales Trends Over Time.
 
 ---
 
@@ -206,8 +219,13 @@ Example of analytical query output from the Gold layer:
 
 ---
 
-## 🚀 License
-This project is licensed under the (MIT License)(LICENSE). You are free to use, modify, and share this project with proper attribution.
+## 📈 Key Insights (Example)
+
+Using the data warehouse, the following insights can be derived:
+
+- Top customers contribute a significant portion of total revenue  
+- Certain product categories dominate overall sales performance  
+- Sales trends reveal potential seasonality patterns  
 
 ---
 
@@ -217,44 +235,51 @@ Full documentation:
 
 `docs/naming_conventions.md`
 
+---
+
 ## ▶️ How to Run
-1. Initialize the database:
+
+1. Initialize the database  
 `scripts/init_database.sql`
 
-2. Load Bronze layer:
+2. Load Bronze layer  
 `scripts/bronze/proc_load_bronze.sql`
 
-3. Load Silver layer:
+3. Load Silver layer  
 `scripts/silver/proc_load_silver.sql`
 
-4. Create Gold layer:
+4. Create Gold views  
 `scripts/gold/ddl_gold.sql`
 
-5. Run data quality checks:
-`tests/quality_checks_silver.sql`
+5. Run data quality checks  
+`tests/quality_checks_silver.sql`  
 `tests/quality_checks_gold.sql`
 
+---
+
 ## 🛠️ Tech Stack
-- SQL (core transformations)
-- Relational Database (Microsoft SQL Server)
-- CSV files (data sources)
-- Dimensional Modeling (Kimball methodology)
+
+- SQL (core transformations).
+- Microsoft SQL Server.
+- CSV files (data sources).
+- Dimensional Modeling (Kimball methodology).
+
+---
 
 ## 💡 Future Improvements
-- Implement incremental loading strategy
-- Add orchestration (Airflow)
-- Automate data quality checks
-- Integrate BI tools (Power BI / Tableau)
 
-## 📈 Key Insights (Example)
+- Implement incremental loading strategy.
+- Add orchestration (Airflow).
+- Automate data quality checks.
+- Integrate BI tools (Power BI / Tableau).
 
-Using the data warehouse, the following insights can be derived:
+---
 
-- Top 10 customers contribute to a significant percentage of total revenue  
-- Certain product categories dominate overall sales performance  
-- Sales show consistent trends based on time (seasonality potential)  
+## 🚀 License
 
-These insights demonstrate how raw data can be transformed into actionable business knowledge.
+This project is licensed under the [MIT License](LICENSE).
+
+---
 
 ## 👨‍💻 About us
 Hi there! I'm Jan Hernandez.
