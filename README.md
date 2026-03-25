@@ -11,31 +11,6 @@ This project demonstrates a comprehensive data warehousing and analytics solutio
 
 ---
 
-## 📑 Table of Contents
-
-- [🚀 Overview](#-overview)
-- [💡 Specifications](#-specifications)
-- [💡 Business Impact](#-business-impact)
-- [🎯 Business Objective](#-business-objective)
-- [🏗️ Architecture](#-architecture)
-- [🏗️ Architecture & Design Diagrams](#-architecture--design-diagrams)
-- [🗄️ Data Modeling](#-data-modeling)
-- [⚙️ ETL / ELT Process](#-etl--elt-process)
-- [🧠 Data Engineering Decisions](#-data-engineering-decisions)
-- [📁 Project Structure](#-project-structure)
-- [✅ Data Quality](#-data-quality)
-- [📊 Analytics & KPIs](#-analytics--kpis)
-- [📸 Sample Results](#-sample-results)
-- [📈 Key Insights (Example)](#-key-insights-example)
-- [🧾 Naming Conventions](#-naming-conventions)
-- [▶️ How to Run](#-how-to-run)
-- [🛠️ Tech Stack](#-tech-stack)
-- [💡 Future Improvements](#-future-improvements)
-- [🚀 License](#-license)
-- [👨‍💻 Author](#-author)
-
----
-
 ## 💡 Specifications
 
 - **Data Sources**: Import data from two source systems (ERP and CRM) provided as CSV files.
@@ -72,13 +47,79 @@ The goal of this project is to provide a structured data platform to answer key 
 
 ## 🏗️ Architecture
 
-The data warehouse follows a multi-layered architecture:
+The solution is based on a **Medallion Architecture (Multi-hop Architecture)** combined with a **Dimensional Modeling approach (Kimball methodology)**.
 
-- 🥉 **Bronze Layer** → Raw data ingestion from CSV files into SQL Server tables  
-- 🥈 **Silver Layer** → Data cleansing, normalization, and integration  
-- 🥇 **Gold Layer** → Business-ready data exposed through **views** (fact and dimension model)
+This design separates data processing into progressive refinement layers, improving data quality, reliability, and analytical performance.
 
-`Source Systems (CSV) → Bronze → Silver → Gold (Views) → Analytics`
+### 🔄 Data Flow
+
+`Source Systems (CSV Files) → Bronze → Silver → Gold (Views) → Analytics`
+
+---
+
+### 🥉 Bronze Layer — *Raw Data Ingestion Layer*
+
+- Implements a **raw ingestion pattern inside a relational database**
+- Data is loaded using `BULK INSERT`
+- No transformations are applied
+- Tables are **fully reloaded (TRUNCATE + INSERT)** on each execution
+
+**Purpose:**
+- Preserve raw data as-is  
+- Enable reprocessing and traceability  
+
+---
+
+### 🥈 Silver Layer — *Cleansed & Conformed Layer*
+
+- Implements **ELT transformations (Extract, Load, Transform)**
+- Applies:
+  - Data normalization (categorical values)
+  - Data cleansing (`TRIM`, NULL handling)
+  - Data correction (recalculated metrics)
+  - Deduplication using window functions (`ROW_NUMBER()`)
+- Integrates multiple sources (CRM + ERP)
+
+**Purpose:**
+- Produce **clean, consistent, and reliable datasets**  
+- Serve as the foundation for analytical modeling  
+
+---
+
+### 🥇 Gold Layer — *Presentation / Data Mart Layer*
+
+- Implements a **Star Schema (Dimensional Model)**
+- Built using **SQL views (virtual data mart)** instead of physical tables
+- Includes:
+  - Fact: `fact_sales`
+  - Dimensions: `dim_customers`, `dim_products`
+- Uses **late-binding joins** between facts and dimensions
+
+**Purpose:**
+- Provide **business-ready, query-optimized datasets**  
+- Support BI and analytical workloads  
+
+---
+
+### 📌 Key Architectural Decisions
+
+- **Medallion Architecture** for layered data refinement  
+- **Kimball Dimensional Modeling** for analytics  
+- **ELT pattern** (transformations after load)  
+- **Full reload strategy** (no incremental loads)  
+- **View-based Gold layer** (no data duplication)  
+- Transformation logic centralized in SQL  
+
+---
+
+### ⚠️ Design Trade-offs
+
+- Full reload simplifies the pipeline but does not scale for large datasets  
+- Views reduce storage but may impact performance at scale  
+- No historization (SCD Type 2 not implemented)  
+- No orchestration layer (e.g., Airflow)  
+
+This represents a **foundational data platform design**, ready to evolve into a production-grade architecture.
 
 ---
 
