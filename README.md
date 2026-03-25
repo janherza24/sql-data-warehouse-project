@@ -14,12 +14,14 @@ This project demonstrates a comprehensive data warehousing and analytics solutio
 ## 📑 Table of Contents
 
 - [🚀 Overview](#-overview)
+- [💡 Specifications](#-specifications)
 - [💡 Business Impact](#-business-impact)
 - [🎯 Business Objective](#-business-objective)
 - [🏗️ Architecture](#-architecture)
 - [🏗️ Architecture & Design Diagrams](#-architecture--design-diagrams)
 - [🗄️ Data Modeling](#-data-modeling)
 - [⚙️ ETL / ELT Process](#-etl--elt-process)
+- [🧠 Data Engineering Decisions](#-data-engineering-decisions)
 - [📁 Project Structure](#-project-structure)
 - [✅ Data Quality](#-data-quality)
 - [📊 Analytics & KPIs](#-analytics--kpis)
@@ -29,6 +31,7 @@ This project demonstrates a comprehensive data warehousing and analytics solutio
 - [▶️ How to Run](#-how-to-run)
 - [🛠️ Tech Stack](#-tech-stack)
 - [💡 Future Improvements](#-future-improvements)
+- [🚀 License](#-license)
 - [👨‍💻 Author](#-author)
 
 ---
